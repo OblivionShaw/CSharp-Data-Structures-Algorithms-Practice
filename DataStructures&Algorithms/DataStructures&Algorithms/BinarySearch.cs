@@ -15,8 +15,10 @@ namespace DataStructures_Algorithms
             int right = nums.Length - 1;
             while (left <= right)
             {
+                //(left+ right) / 2 
+                //防止mid溢出使用以下
                 int mid = left + (right - left) / 2;
-                //MessageBox.Show("mid=" + mid);
+                MessageBox.Show("left=" + left + " right=" + right + " mid=" + mid);
                 if (nums[mid] == target)
                 {
                     

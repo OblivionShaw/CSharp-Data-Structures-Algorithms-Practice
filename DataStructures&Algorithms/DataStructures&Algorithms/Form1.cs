@@ -17,6 +17,10 @@ namespace DataStructures_Algorithms
             MessageBox.Show("二元搜尋Index=" + bs.Search(nums,target));
             target = 2;
             MessageBox.Show("二元搜尋Index=" + bs.Search(nums, target));
+            nums = new int[] { 3, 5 ,12, 16, 17, 26, 32, 51, 53, 64 };
+            target = 32;
+            MessageBox.Show("二元搜尋Index=" + bs.Search(nums, target));
+
         }
     }
 }
