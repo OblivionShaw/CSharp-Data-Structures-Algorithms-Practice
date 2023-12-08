@@ -67,5 +67,51 @@ namespace DataStructures_Algorithms
             }
             MessageBox.Show(resultstring);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BinaryTree bs = new BinaryTree();
+            BinaryTree.TreeNode root = new BinaryTree.TreeNode(6);
+            root.left = new BinaryTree.TreeNode(2);
+            root.right = new BinaryTree.TreeNode(8);
+            root.left.left = new BinaryTree.TreeNode(0);
+            root.left.right = new BinaryTree.TreeNode(4);
+            root.right.left = new BinaryTree.TreeNode(7);
+            root.right.right = new BinaryTree.TreeNode(9);
+            root.left.right.left = new BinaryTree.TreeNode(3);
+            root.left.right.right = new BinaryTree.TreeNode(5);
+            // 找到值為 p 和 q 的節點
+            BinaryTree.TreeNode p = root.left;  // 假設 p 的值為 2
+            BinaryTree.TreeNode q = root.right;  // 假設 q 的值為 8
+
+            // 調用 LowestCommonAncestor 方法
+            BinaryTree.TreeNode lca = bs.LowestCommonAncestor(root, p, q);
+
+            // 顯示最低共同祖先的值
+            MessageBox.Show(lca.val.ToString());
+
+
+            root = new BinaryTree.TreeNode(6);
+            root.left = new BinaryTree.TreeNode(2);
+            root.right = new BinaryTree.TreeNode(8);
+            root.left.left = new BinaryTree.TreeNode(0);
+            root.left.right = new BinaryTree.TreeNode(4);
+            root.right.left = new BinaryTree.TreeNode(7);
+            root.right.right = new BinaryTree.TreeNode(9);
+            root.left.right.left = new BinaryTree.TreeNode(3);
+            root.left.right.right = new BinaryTree.TreeNode(5);
+            p = root.left;  // p = 2
+            q = root.left.right;  // q = 4
+            lca = bs.LowestCommonAncestor(root, p, q);
+            MessageBox.Show(lca.val.ToString());
+
+
+            root = new BinaryTree.TreeNode(2);
+            root.left = new BinaryTree.TreeNode(1);
+            p = root;  // p = 2
+            q = root.left;  // q = 1
+            lca = bs.LowestCommonAncestor(root, p, q);
+            MessageBox.Show(lca.val.ToString());
+        }
     }
 }
