@@ -32,7 +32,40 @@ namespace DataStructures_Algorithms
             int[][] result = new int[][] { };
             MessageBox.Show("" + image[0][0] + image[0][1] + image[0][2] + "\n\r" + image[1][0] + image[1][1] + image[1][2] + "\n\r" + image[2][0] + image[2][1] + image[2][2] + "\n\r");
             result = DFS.FloodFill(image, sr, sc, color);
-            MessageBox.Show("" + result[0][0] + result[0][1] + result[0][2] +"\n\r" + result[1][0] + result[1][1] + result[1][2] + "\n\r" + result[2][0] + result[2][1] + result[2][2] + "\n\r");
+            MessageBox.Show("" + result[0][0] + result[0][1] + result[0][2] + "\n\r" + result[1][0] + result[1][1] + result[1][2] + "\n\r" + result[2][0] + result[2][1] + result[2][2] + "\n\r");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            HashSet hs = new HashSet();
+            int[] nums1 = [1, 2, 3], nums2 = [2, 4, 6];
+            List<IList<int>> result = (List<IList<int>>)hs.FindDifference(nums1, nums2);
+            string resultstring = "";
+
+            foreach (var list in result)
+            {
+                foreach (var num in list)
+                {
+                    resultstring += num + " ";
+                }
+                resultstring += "\n";
+            }
+            MessageBox.Show(resultstring);
+
+            nums1 = [1, 2, 3, 3];
+            nums2 = [1, 1, 2, 2];
+            result = (List<IList<int>>)hs.FindDifference(nums1, nums2);
+            resultstring = "";
+
+            foreach (var list in result)
+            {
+                foreach (var num in list)
+                {
+                    resultstring += num + " ";
+                }
+                resultstring += "\n";
+            }
+            MessageBox.Show(resultstring);
         }
     }
 }
