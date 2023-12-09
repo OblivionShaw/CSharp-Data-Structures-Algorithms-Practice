@@ -113,5 +113,29 @@ namespace DataStructures_Algorithms
             lca = bs.LowestCommonAncestor(root, p, q);
             MessageBox.Show(lca.val.ToString());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            BinaryTree bs = new BinaryTree();
+            BinaryTree.TreeNode root = new BinaryTree.TreeNode(3);
+            root.left = new BinaryTree.TreeNode(9);
+            root.right = new BinaryTree.TreeNode(20);
+            root.right.left = new BinaryTree.TreeNode(15);
+            root.right.right = new BinaryTree.TreeNode(7);
+            MessageBox.Show("폻ⓕ1짨ㅈ언О" + bs.IsBalanced(root));
+
+
+            root = new BinaryTree.TreeNode(1);
+            root.left = new BinaryTree.TreeNode(2);
+            root.right = new BinaryTree.TreeNode(2);
+            root.left.left = new BinaryTree.TreeNode(3);
+            root.left.right = new BinaryTree.TreeNode(3);
+            root.left.right.left = new BinaryTree.TreeNode(4);
+            root.left.right.right = new BinaryTree.TreeNode(4);
+            MessageBox.Show("폻ⓕ2짨ㅈ언О" + bs.IsBalanced(root));
+
+            root = null;
+            MessageBox.Show("폻ⓕ3짨ㅈ언О" + bs.IsBalanced(root));
+        }
     }
 }

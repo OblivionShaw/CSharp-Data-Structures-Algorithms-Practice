@@ -69,5 +69,54 @@ namespace DataStructures_Algorithms
                 return root;
             }
         }
+
+        // 定義一個判斷平衡二元樹的函數
+        public bool IsBalanced(TreeNode root)
+        {
+            // 如果根節點為空，則回傳true，因為空樹也是平衡二元樹
+            if (root == null)
+            {
+                return true;
+            }
+            // 計算根節點的左右子樹的高度
+            int leftHeight = GetHeight(root.left);
+            int rightHeight = GetHeight(root.right);
+            // 如果左右子樹的高度差超過1，則回傳false，因為不符合平衡二元樹的定義
+            if (Math.Abs(leftHeight - rightHeight) > 1)
+            {
+                return false;
+            }
+            // 如果左右子樹的高度差不超過1，則遞迴地檢查左右子樹是否也是平衡二元樹，並回傳結果
+            return IsBalanced(root.left) && IsBalanced(root.right);
+
+            //方法2
+            //if(root == null) return true;
+            //return Height(root) != -1;
+        }
+
+        // 定義一個計算節點高度的函數
+        private int GetHeight(TreeNode node)
+        {
+            // 如果節點為空，則回傳0，因為空節點的高度為0
+            if (node == null)
+            {
+                return 0;
+            }
+            // 如果節點不為空，則回傳1加上左右子節點的高度的最大值，因為節點的高度等於其子樹的高度加1
+            return 1 + Math.Max(GetHeight(node.left), GetHeight(node.right));
+        }
+
+        //方法2
+        private int Height(TreeNode root)
+        {
+            if (root == null) return 0;
+            var leftHeight = Height(root.left);
+            if (leftHeight == -1) return -1;
+            var rightHeight = Height(root.right);
+
+            if (rightHeight == -1) return -1;
+            if (Math.Abs(leftHeight - rightHeight) > 1) return -1;
+            return Math.Max(leftHeight, rightHeight) + 1;
+        }
     }
 }
