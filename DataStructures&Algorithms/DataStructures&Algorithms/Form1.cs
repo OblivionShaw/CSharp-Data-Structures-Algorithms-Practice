@@ -154,7 +154,7 @@ namespace DataStructures_Algorithms
             node2.next = node3;
             node3.next = node4;
             node4.next = node2;  // 創建一個環，使得 node4 指向 node2
-            MessageBox.Show(""+ll.HasCycleHashTable(node1));
+            MessageBox.Show("" + ll.HasCycleHashTable(node1));
 
             ll = new LinkedList();
             node1 = new ListNode(1);
@@ -166,6 +166,28 @@ namespace DataStructures_Algorithms
             ll = new LinkedList();
             node1 = new ListNode(1);
             MessageBox.Show("" + ll.HasCycleHashTable(node1));
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            StackQueue sq = new StackQueue();
+            sq.QueueUsingStacks();
+            MessageBox.Show(sq.GetStackStatus());
+            sq.Push(1);
+            MessageBox.Show("Push：" + sq.GetStackStatus());
+            sq.Push(2);
+            MessageBox.Show("Push：" + sq.GetStackStatus());
+            //sq.Peek();
+            MessageBox.Show("Peek：" + sq.Peek().ToString());
+            MessageBox.Show(sq.GetStackImpelemntQueue());
+            MessageBox.Show("Pop：" + sq.Pop().ToString());
+            //sq.Pop();
+            MessageBox.Show(sq.GetStackImpelemntQueue());
+            sq.Push(5);
+            MessageBox.Show("Push：" + sq.GetStackStatus() + sq.GetStackImpelemntQueue());
+            sq.Empty();
+            MessageBox.Show(sq.GetStackStatus());
 
         }
     }
