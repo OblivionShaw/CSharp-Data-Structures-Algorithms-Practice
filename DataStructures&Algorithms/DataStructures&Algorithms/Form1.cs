@@ -190,5 +190,24 @@ namespace DataStructures_Algorithms
             MessageBox.Show(sq.GetStackStatus());
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string ransomNote = "aa", magazine = "aab";
+
+
+            int[] counts = new int[26];
+            foreach (char c in magazine)
+            {
+                counts[c - 'a']++;
+            }
+            foreach (char c in ransomNote)
+            {
+                counts[c - 'a']--;
+                if (counts[c - 'a'] < 0)
+                    MessageBox.Show("µL²Å¦X");
+            }
+            MessageBox.Show("²Å¦X");
+        }
     }
 }
