@@ -228,6 +228,8 @@ namespace DataStructures_Algorithms
             MessageBox.Show(ll.PrintList(node1));
             node1 = ll.ReverseList(node1);
             MessageBox.Show(ll.PrintList(node1));
+            node1 = ll.ReverseList2(node1);
+            MessageBox.Show(ll.PrintList(node1));
 
         }
     }

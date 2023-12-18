@@ -64,6 +64,7 @@ namespace DataStructures_Algorithms
 
         #region 206. Reverse Linked List
 
+        //迭代
         public ListNode ReverseList(ListNode head)
         {
             ListNode prev = null;
@@ -77,6 +78,18 @@ namespace DataStructures_Algorithms
             }
 
             return prev;
+        }
+
+        //遞迴
+        public ListNode ReverseList2(ListNode head)
+        {
+            if (head == null || head.next == null)
+                return head;
+
+            ListNode cur = ReverseList2(head.next);
+            head.next.next = head;
+            head.next = null;
+            return cur;
         }
 
         public string PrintList(ListNode head)
