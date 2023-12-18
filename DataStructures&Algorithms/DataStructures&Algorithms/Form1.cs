@@ -209,5 +209,26 @@ namespace DataStructures_Algorithms
             }
             MessageBox.Show("符合");
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            LinkedList ll = new LinkedList();
+            int pos = 1;
+            // 創建 ListNode 實例
+            ListNode node1 = new ListNode(1);
+            ListNode node2 = new ListNode(2);
+            ListNode node3 = new ListNode(3);
+            ListNode node4 = new ListNode(4);
+            ListNode node5 = new ListNode(5);
+
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+            node4.next = node5;
+            MessageBox.Show(ll.PrintList(node1));
+            node1 = ll.ReverseList(node1);
+            MessageBox.Show(ll.PrintList(node1));
+
+        }
     }
 }

@@ -62,6 +62,36 @@ namespace DataStructures_Algorithms
 
         #endregion
 
+        #region 206. Reverse Linked List
+
+        public ListNode ReverseList(ListNode head)
+        {
+            ListNode prev = null;
+            ListNode current = head;
+            while (current != null)
+            {
+                var temp = current.next;
+                current.next = prev;
+                prev = current;
+                current = temp;
+            }
+
+            return prev;
+        }
+
+        public string PrintList(ListNode head)
+        {
+            StringBuilder sb = new StringBuilder();
+            ListNode node = head;
+            while (node != null)
+            {
+                sb.Append(node.val + " ");
+                node = node.next;
+            }
+            return sb.ToString().Trim();
+        }
+
+        #endregion
 
     }
 }
