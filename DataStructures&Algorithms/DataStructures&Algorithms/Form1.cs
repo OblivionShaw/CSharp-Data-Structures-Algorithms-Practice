@@ -71,7 +71,7 @@ namespace DataStructures_Algorithms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            BinaryTree bs = new BinaryTree();
+            BinaryTree bt = new BinaryTree();
             BinaryTree.TreeNode root = new BinaryTree.TreeNode(6);
             root.left = new BinaryTree.TreeNode(2);
             root.right = new BinaryTree.TreeNode(8);
@@ -86,7 +86,7 @@ namespace DataStructures_Algorithms
             BinaryTree.TreeNode q = root.right;  // 假設 q 的值為 8
 
             // 調用 LowestCommonAncestor 方法
-            BinaryTree.TreeNode lca = bs.LowestCommonAncestor(root, p, q);
+            BinaryTree.TreeNode lca = bt.LowestCommonAncestor(root, p, q);
 
             // 顯示最低共同祖先的值
             MessageBox.Show(lca.val.ToString());
@@ -103,7 +103,7 @@ namespace DataStructures_Algorithms
             root.left.right.right = new BinaryTree.TreeNode(5);
             p = root.left;  // p = 2
             q = root.left.right;  // q = 4
-            lca = bs.LowestCommonAncestor(root, p, q);
+            lca = bt.LowestCommonAncestor(root, p, q);
             MessageBox.Show(lca.val.ToString());
 
 
@@ -111,7 +111,7 @@ namespace DataStructures_Algorithms
             root.left = new BinaryTree.TreeNode(1);
             p = root;  // p = 2
             q = root.left;  // q = 1
-            lca = bs.LowestCommonAncestor(root, p, q);
+            lca = bt.LowestCommonAncestor(root, p, q);
             MessageBox.Show(lca.val.ToString());
         }
 
@@ -230,6 +230,22 @@ namespace DataStructures_Algorithms
             MessageBox.Show(ll.PrintList(node1));
             node1 = ll.ReverseList2(node1);
             MessageBox.Show(ll.PrintList(node1));
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            BinaryTree bt = new BinaryTree();
+            BinaryTree.TreeNode root = new BinaryTree.TreeNode(1);
+            root.left = new BinaryTree.TreeNode(2);
+            root.right = new BinaryTree.TreeNode(3);
+            root.left.left = new BinaryTree.TreeNode(4);
+            root.left.right = new BinaryTree.TreeNode(5);
+            MessageBox.Show(""+ bt.DiameterOfBinaryTree(root));
+
+            root = new BinaryTree.TreeNode(1);
+            root.left = new BinaryTree.TreeNode(2);
+            MessageBox.Show("" + bt.DiameterOfBinaryTree(root));
 
         }
     }

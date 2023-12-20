@@ -118,5 +118,35 @@ namespace DataStructures_Algorithms
             if (Math.Abs(leftHeight - rightHeight) > 1) return -1;
             return Math.Max(leftHeight, rightHeight) + 1;
         }
+
+
+
+        #region 543. Diameter of Binary Tree
+        int diameter = 0;
+
+        public int DiameterOfBinaryTree(TreeNode root)
+        {
+            diameter = 0;
+            Depth(root);
+            return diameter;
+        }
+
+        private int Depth(TreeNode node)
+        {
+            if (node == null)
+            {
+                return 0;
+            }
+
+            int leftDepth = Depth(node.left);
+            int rightDepth = Depth(node.right);
+
+            diameter = Math.Max(diameter, leftDepth + rightDepth);
+
+            return Math.Max(leftDepth, rightDepth) + 1;
+        }
+
+        #endregion
+
     }
 }
