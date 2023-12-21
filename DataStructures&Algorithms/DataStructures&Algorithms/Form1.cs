@@ -241,12 +241,44 @@ namespace DataStructures_Algorithms
             root.right = new BinaryTree.TreeNode(3);
             root.left.left = new BinaryTree.TreeNode(4);
             root.left.right = new BinaryTree.TreeNode(5);
-            MessageBox.Show(""+ bt.DiameterOfBinaryTree(root));
+            MessageBox.Show("" + bt.DiameterOfBinaryTree(root));
 
             root = new BinaryTree.TreeNode(1);
             root.left = new BinaryTree.TreeNode(2);
             MessageBox.Show("" + bt.DiameterOfBinaryTree(root));
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            LinkedList ll = new LinkedList();
+            ListNode node1 = new ListNode(1);
+            ListNode node2 = new ListNode(2);
+            ListNode node3 = new ListNode(3);
+            ListNode node4 = new ListNode(4);
+            ListNode node5 = new ListNode(5);
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+            node4.next = node5;
+            ListNode result = ll.MiddleNode(node1);
+            MessageBox.Show(ll.PrintList(result));
+
+
+            ll = new LinkedList();
+            node1 = new ListNode(1);
+            node2 = new ListNode(2);
+            node3 = new ListNode(3);
+            node4 = new ListNode(4);
+            node5 = new ListNode(5);
+            ListNode node6 = new ListNode(6);
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+            node4.next = node5;
+            node5.next = node6;
+            result = ll.MiddleNode(node1);
+            MessageBox.Show(ll.PrintList(result));
         }
     }
 }

@@ -38,6 +38,7 @@
             button8 = new Button();
             button9 = new Button();
             button10 = new Button();
+            button11 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -92,7 +93,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(269, 132);
+            button6.Location = new Point(51, 269);
             button6.Name = "button6";
             button6.Size = new Size(80, 80);
             button6.TabIndex = 5;
@@ -122,7 +123,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(475, 26);
+            button9.Location = new Point(162, 269);
             button9.Name = "button9";
             button9.Size = new Size(80, 80);
             button9.TabIndex = 8;
@@ -140,11 +141,22 @@
             button10.UseVisualStyleBackColor = true;
             button10.Click += button10_Click;
             // 
+            // button11
+            // 
+            button11.Location = new Point(269, 269);
+            button11.Name = "button11";
+            button11.Size = new Size(80, 80);
+            button11.TabIndex = 10;
+            button11.Text = "Middle of the Linked List";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(button8);
@@ -172,5 +184,6 @@
         private Button button8;
         private Button button9;
         private Button button10;
+        private Button button11;
     }
 }
