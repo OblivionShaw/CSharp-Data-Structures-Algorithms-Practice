@@ -280,5 +280,21 @@ namespace DataStructures_Algorithms
             result = ll.MiddleNode(node1);
             MessageBox.Show(ll.PrintList(result));
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            BinaryTree bt = new BinaryTree();
+            BinaryTree.TreeNode root = new BinaryTree.TreeNode(3);
+            root.left = new BinaryTree.TreeNode(9);
+            root.right = new BinaryTree.TreeNode(20);
+            root.right.left = new BinaryTree.TreeNode(15);
+            root.right.right = new BinaryTree.TreeNode(7);
+            MessageBox.Show(""+ bt.MaxDepth(root));
+
+            root = new BinaryTree.TreeNode(1);
+            root.right = new BinaryTree.TreeNode(2);
+            MessageBox.Show("" + bt.MaxDepth(root));
+
+        }
     }
 }
