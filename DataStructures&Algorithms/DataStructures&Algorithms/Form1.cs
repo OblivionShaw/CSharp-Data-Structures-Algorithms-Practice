@@ -1,5 +1,6 @@
 using System.Drawing;
 using static DataStructures_Algorithms.LinkedList;
+using static DataStructures_Algorithms.MeetingRooms;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace DataStructures_Algorithms
@@ -289,11 +290,37 @@ namespace DataStructures_Algorithms
             root.right = new BinaryTree.TreeNode(20);
             root.right.left = new BinaryTree.TreeNode(15);
             root.right.right = new BinaryTree.TreeNode(7);
-            MessageBox.Show(""+ bt.MaxDepth(root));
+            MessageBox.Show("" + bt.MaxDepth(root));
 
             root = new BinaryTree.TreeNode(1);
             root.right = new BinaryTree.TreeNode(2);
             MessageBox.Show("" + bt.MaxDepth(root));
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MeetingRooms mr = new MeetingRooms();
+            // 設定第一種情況的輸入
+            Interval[] intervals1 = new Interval[] 
+            {
+            new Interval(0, 30),
+            new Interval(5, 10),
+            new Interval(15, 20)
+            };
+
+            // 檢查第一種情況是否可以參加所有會議
+            MessageBox.Show(mr.CanAttendMeetings(intervals1).ToString());
+
+            // 設定第二種情況的輸入
+            Interval[] intervals2 = new Interval[] 
+            {
+            new Interval(7, 10),
+            new Interval(2, 4)
+            };
+
+            // 檢查第二種情況是否可以參加所有會議
+            MessageBox.Show(mr.CanAttendMeetings(intervals2).ToString());
 
         }
     }
