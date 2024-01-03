@@ -41,6 +41,7 @@
             button11 = new Button();
             button12 = new Button();
             button13 = new Button();
+            button14 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -173,11 +174,22 @@
             button13.UseVisualStyleBackColor = true;
             button13.Click += button13_Click;
             // 
+            // button14
+            // 
+            button14.Location = new Point(594, 279);
+            button14.Name = "button14";
+            button14.Size = new Size(80, 80);
+            button14.TabIndex = 13;
+            button14.Text = "Same Tree";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button14);
             Controls.Add(button13);
             Controls.Add(button12);
             Controls.Add(button11);
@@ -211,5 +223,6 @@
         private Button button11;
         private Button button12;
         private Button button13;
+        private Button button14;
     }
 }

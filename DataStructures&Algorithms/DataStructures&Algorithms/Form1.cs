@@ -302,7 +302,7 @@ namespace DataStructures_Algorithms
         {
             MeetingRooms mr = new MeetingRooms();
             // 設定第一種情況的輸入
-            Interval[] intervals1 = new Interval[] 
+            Interval[] intervals1 = new Interval[]
             {
             new Interval(0, 30),
             new Interval(5, 10),
@@ -313,7 +313,7 @@ namespace DataStructures_Algorithms
             MessageBox.Show(mr.CanAttendMeetings(intervals1).ToString());
 
             // 設定第二種情況的輸入
-            Interval[] intervals2 = new Interval[] 
+            Interval[] intervals2 = new Interval[]
             {
             new Interval(7, 10),
             new Interval(2, 4)
@@ -322,6 +322,31 @@ namespace DataStructures_Algorithms
             // 檢查第二種情況是否可以參加所有會議
             MessageBox.Show(mr.CanAttendMeetings(intervals2).ToString());
 
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BinaryTree bt = new BinaryTree();
+            BinaryTree.TreeNode root1 = new BinaryTree.TreeNode(1);
+            root1.left = new BinaryTree.TreeNode(2);
+            root1.right = new BinaryTree.TreeNode(3);
+            BinaryTree.TreeNode root2 = new BinaryTree.TreeNode(1);
+            root2.left = new BinaryTree.TreeNode(2);
+            root2.right = new BinaryTree.TreeNode(3);
+            MessageBox.Show(bt.IsSameTree(root1, root2).ToString());
+
+            root1 = new BinaryTree.TreeNode(1);
+            root1.left = new BinaryTree.TreeNode(2);
+            root2 = new BinaryTree.TreeNode(1);
+            root2.right = new BinaryTree.TreeNode(2);
+            MessageBox.Show(bt.IsSameTree(root1, root2).ToString());
+            root1 = new BinaryTree.TreeNode(1);
+            root1.left = new BinaryTree.TreeNode(2);
+            root1.right = new BinaryTree.TreeNode(1);
+            root2 = new BinaryTree.TreeNode(1);
+            root2.left = new BinaryTree.TreeNode(1);
+            root2.right = new BinaryTree.TreeNode(2);
+            MessageBox.Show(bt.IsSameTree(root1, root2).ToString());
         }
     }
 }
